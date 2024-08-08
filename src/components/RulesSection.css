@@ -1,0 +1,12 @@
+/* RulesSection.css */
+.section {
+    margin-bottom: 40px;
+  }
+  
+  .rules {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    line-height: 1.5;
+  }
+  
