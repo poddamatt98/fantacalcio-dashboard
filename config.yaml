@@ -1,0 +1,40 @@
+# config.yaml
+competition:
+  name: "Fantasy Football"
+  rules: |
+    1. Each team must have 3 goalkeepers, 8 defenders, 8 midfielders, and 6 strikers.
+    2. No more than 3 players from the same real team.
+    3. Transfers are allowed once a week.
+    4. Sold price is calculated as ((actual price / starting FC price) * buy price), with the factor between 0.5 and 2.
+teams:
+  - name: "Team A"
+    players:
+      - real_team: "Real Madrid"
+        name: "Thibaut Courtois"
+        role: "Goalkeeper"
+        starting_fc_price: 10
+        buy_price: 15
+        actual_fc_price: 12
+      - real_team: "Real Madrid"
+        name: "Sergio Ramos"
+        role: "Defender"
+        starting_fc_price: 12
+        buy_price: 16
+        actual_fc_price: 14
+      # Add more players following the structure above
+  - name: "Team B"
+    players:
+      - real_team: "Barcelona"
+        name: "Marc-André ter Stegen"
+        role: "Goalkeeper"
+        starting_fc_price: 11
+        buy_price: 14
+        actual_fc_price: 9
+      - real_team: "Barcelona"
+        name: "Gerard Piqué"
+        role: "Defender"
+        starting_fc_price: 9
+        buy_price: 13
+        actual_fc_price: 10
+      # Add more players following the structure above
+  # Add remaining 8 teams following the structure above

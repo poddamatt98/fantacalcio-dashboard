@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fantacalcio-dashboard/static/css/main.e27cb932.css",
+    "main.js": "/fantacalcio-dashboard/static/js/main.ce74a64d.js",
+    "static/js/453.6bb20d96.chunk.js": "/fantacalcio-dashboard/static/js/453.6bb20d96.chunk.js",
+    "index.html": "/fantacalcio-dashboard/index.html",
+    "main.e27cb932.css.map": "/fantacalcio-dashboard/static/css/main.e27cb932.css.map",
+    "main.ce74a64d.js.map": "/fantacalcio-dashboard/static/js/main.ce74a64d.js.map",
+    "453.6bb20d96.chunk.js.map": "/fantacalcio-dashboard/static/js/453.6bb20d96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e27cb932.css",
+    "static/js/main.ce74a64d.js"
+  ]
+}
