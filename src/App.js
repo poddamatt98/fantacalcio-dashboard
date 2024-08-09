@@ -10,7 +10,7 @@ const App = () => {
   const [competitions, setCompetitions] = useState([]);
   const [selectedCompetition, setSelectedCompetition] = useState(null);
   const [loading, setLoading] = useState(true);
-  const configFilePath = process.env.REACT_APP_API_URL;
+  const configFilePath = process.env.PUBLIC_URL.concat(process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     const fetchConfig = async () => {
