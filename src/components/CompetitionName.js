@@ -1,28 +1,26 @@
 import React from 'react';
-import './CompetitionName.css';
-
-// Usage example
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
-
-// const competitionData = {
-//   name: "Fantasy Football League",
-//   imageUrl: "https://example.com/logo.png" // Replace with actual image URL
-// };
-
-// ReactDOM.render(
-//   <App competitionData={competitionData} />,
-//   document.getElementById('root')
-// );
-
+import { useNavigate } from 'react-router-dom';
 
 const CompetitionName = ({ name, imageUrl }) => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate('/');
+  };
+
   return (
-    <div className="competition-header">
-      <img src={imageUrl} alt="Competition Logo" className="header-image start-image" />
-      <h1 className="title">{name}</h1>
-      <img src={imageUrl} alt="Competition Logo" className="header-image end-image" />
+    <div className="p-6 bg-white shadow-md rounded-lg mb-8">
+      <button
+        onClick={handleBack}
+        className="text-blue-500 hover:text-blue-700 mb-4 inline-block"
+      >
+        &larr; Back
+      </button>
+      <div className="flex items-center justify-between">
+        <img src={imageUrl} alt="Competition Logo" className="w-16 h-16 rounded-full" />
+        <h1 className="text-2xl font-bold text-center flex-grow mx-4">{name}</h1>
+        <img src={imageUrl} alt="Competition Logo" className="w-16 h-16 rounded-full" />
+      </div>
     </div>
   );
 };

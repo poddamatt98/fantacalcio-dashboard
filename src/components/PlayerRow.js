@@ -1,5 +1,4 @@
 import React from 'react';
-import './PlayerRow.css';
 
 const PlayerRow = ({ player, isEvenRow }) => {
   return (
