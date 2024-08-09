@@ -1,40 +1,54 @@
-# config.yaml
-competition:
-  name: "Fantasy Football"
-  rules: |
-    1. Each team must have 3 goalkeepers, 8 defenders, 8 midfielders, and 6 strikers.
-    2. No more than 3 players from the same real team.
-    3. Transfers are allowed once a week.
-    4. Sold price is calculated as ((actual price / starting FC price) * buy price), with the factor between 0.5 and 2.
-teams:
-  - name: "Team A"
-    players:
-      - real_team: "Real Madrid"
-        name: "Thibaut Courtois"
-        role: "Goalkeeper"
-        starting_fc_price: 10
-        buy_price: 15
-        actual_fc_price: 12
-      - real_team: "Real Madrid"
-        name: "Sergio Ramos"
-        role: "Defender"
-        starting_fc_price: 12
-        buy_price: 16
-        actual_fc_price: 14
-      # Add more players following the structure above
-  - name: "Team B"
-    players:
-      - real_team: "Barcelona"
-        name: "Marc-André ter Stegen"
-        role: "Goalkeeper"
-        starting_fc_price: 11
-        buy_price: 14
-        actual_fc_price: 9
-      - real_team: "Barcelona"
-        name: "Gerard Piqué"
-        role: "Defender"
-        starting_fc_price: 9
-        buy_price: 13
-        actual_fc_price: 10
-      # Add more players following the structure above
-  # Add remaining 8 teams following the structure above
+competitions:
+  - name: "Fantasy Football League"
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Scudetto.svg/1008px-Scudetto.svg.png"
+    rules: |
+      1. Each team must have 3 goalkeepers, 8 defenders, 8 midfielders, and 6 strikers.
+      2. No more than 3 players from the same real team.
+      3. Transfers are allowed once a week.
+      4. Sold price is calculated as ((actual price / starting FC price) * buy price), with the factor between 0.5 and 2.
+    teams:
+      - name: "Team Alpha"
+        players:
+          - name: "John Doe"
+            role: "Goalkeeper"
+            startingFCPrice: 5.0
+            buyPrice: 10.0
+            actualFCPrice: 6.0
+          - name: "Jane Smith"
+            role: "Defender"
+            startingFCPrice: 4.0
+            buyPrice: 8.0
+            actualFCPrice: 5.0
+          # Add additional players
+      - name: "Team Beta"
+        players:
+          - name: "Charlie Green"
+            role: "Goalkeeper"
+            startingFCPrice: 5.5
+            buyPrice: 11.0
+            actualFCPrice: 6.5
+          - name: "Daisy Adams"
+            role: "Defender"
+            startingFCPrice: 4.5
+            buyPrice: 9.0
+            actualFCPrice: 5.5
+          # Add additional players
+  - name: "Another Competition"
+    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Scudetto.svg/1008px-Scudetto.svg.png"
+    rules: |
+      1. Teams must include at least one goalkeeper.
+      2. Maximum of 5 transfers per season.
+    teams:
+      - name: "Team Gamma"
+        players:
+          - name: "Alice Johnson"
+            role: "Midfielder"
+            startingFCPrice: 6.0
+            buyPrice: 12.0
+            actualFCPrice: 7.0
+          - name: "Bob Brown"
+            role: "Striker"
+            startingFCPrice: 7.0
+            buyPrice: 14.0
+            actualFCPrice: 8.0
+          # Add additional players
