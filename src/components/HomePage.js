@@ -5,27 +5,31 @@ import RulesSection from './RulesSection';
 import TeamTable from './TeamTable';
 import './HomePage.css';
 
-const HomePage = () => {
+const HomePage = ({ configFilePath }) => {
   const [competition, setCompetition] = useState(null);
 
   useEffect(() => {
     const fetchConfig = async () => {
-      const configData = await loadConfig();
-      const teamsWithSoldPrices = configData.teams.map(team => ({
-        ...team,
-        players: team.players.map(player => ({
-          ...player,
-          sold_price: calculateSoldPrice(player)
-        }))
-      }));
-      setCompetition({
-        ...configData.competition,
-        teams: teamsWithSoldPrices
-      });
+      try {
+        const configData = await loadConfig(configFilePath);
+        const teamsWithSoldPrices = configData.teams.map(team => ({
+          ...team,
+          players: team.players.map(player => ({
+            ...player,
+            sold_price: calculateSoldPrice(player)
+          }))
+        }));
+        setCompetition({
+          ...configData.competition,
+          teams: teamsWithSoldPrices
+        });
+      } catch (error) {
+        console.error('Failed to fetch configuration:', error);
+      }
     };
 
     fetchConfig();
-  }, []);
+  }, [configFilePath]);
 
   const calculateSoldPrice = (player) => {
     const factor = Math.min(Math.max(player.actual_fc_price / player.starting_fc_price, 0.5), 2);
@@ -38,7 +42,7 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <CompetitionName name={competition.name} imageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Scudetto.svg/1008px-Scudetto.svg.png" />
+      <CompetitionName name={competition.name} imageUrl="  https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Scudetto.svg/1008px-Scudetto.svg.png" />
       <RulesSection rules={competition.rules} />
       <section className="section">
         <h2>Teams</h2>

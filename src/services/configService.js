@@ -1,12 +1,13 @@
+import axios from 'axios';
 import yaml from 'js-yaml';
 
-export const loadConfig = async () => {
+export const loadConfig = async (filePath) => {
   try {
-    const response = await fetch('/config.yaml');
-    const yamlText = await response.text();
-    return yaml.load(yamlText);
+    const response = await axios.get(filePath);
+    const configData = yaml.load(response.data);
+    return configData;
   } catch (error) {
-    console.error("Error loading the YAML config", error);
+    console.error('Error loading the config file:', error);
     throw error;
   }
 };
