@@ -2,7 +2,7 @@ import React from 'react';
 import HomePage from './components/HomePage';
 
 function App() {
-  const configFilePath = './fantacalcio-dashboard/config.yaml'; // Update with the correct path
+  const configFilePath = `${process.env.PUBLIC_URL}/config.yaml`;
 
   return (
     <div>
